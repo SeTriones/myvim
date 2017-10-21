@@ -8,6 +8,7 @@ set backspace=indent,eol,start
 colo darkblue
 
 set incsearch
+set hlsearch
 
 filetype plugin indent on
 set number
@@ -28,3 +29,6 @@ call vundle#end()
 filetype plugin indent on
 
 let g:ycm_global_ycm_extra_conf = '${path}/.ycm_extra_conf.py'
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
+set shell=/bin/bash
