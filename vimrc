@@ -17,6 +17,7 @@ set nocompatible
 set tabstop=4
 set softtabstop=4
 set cindent shiftwidth=4
+set encoding=utf-8
 au Filetype python setl et ts=4 sw=4
 
 set nocompatible
@@ -25,10 +26,45 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+" tagbar relies on Universal Ctags, you can download && make && make install
+Plugin 'majutsushi/tagbar'
+Plugin 'chase/vim-ansible-yaml'
 call vundle#end()
 filetype plugin indent on
 
 let g:ycm_global_ycm_extra_conf = '${path}/.ycm_extra_conf.py'
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+nmap <F8> :TagbarToggle<CR>
+
+" go tagbar relies on https://github.com/jstemmer/gotags
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\}
+
 set shell=/bin/bash
