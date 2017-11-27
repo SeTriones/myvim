@@ -29,6 +29,7 @@ Plugin 'Valloric/YouCompleteMe'
 " tagbar relies on Universal Ctags, you can download && make && make install
 Plugin 'majutsushi/tagbar'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'rdnetto/YCM-Generator'
 call vundle#end()
 filetype plugin indent on
 
@@ -37,6 +38,7 @@ let g:ycm_show_diagnostics_ui = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nmap <F8> :TagbarToggle<CR>
+let g:tagbar_left = 1
 
 " go tagbar relies on https://github.com/jstemmer/gotags
 let g:tagbar_type_go = {
