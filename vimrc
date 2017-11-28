@@ -36,6 +36,7 @@ filetype plugin indent on
 let g:ycm_global_ycm_extra_conf = '${path}/.ycm_extra_conf.py'
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_confirm_extra_conf = 0
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_left = 1
