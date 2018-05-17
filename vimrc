@@ -30,6 +30,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'rdnetto/YCM-Generator'
+Plugin 'Yggdroot/LeaderF'
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 call vundle#end()
 filetype plugin indent on
 
@@ -38,6 +40,7 @@ let g:ycm_show_diagnostics_ui = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
 nnoremap <leader>g :YcmCompleter GoTo<CR>
+noremap <F2> :LeaderfFunction!<CR>
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_left = 1
 
@@ -75,3 +78,5 @@ let g:tagbar_type_go = {
 \}
 
 set shell=/bin/bash
+set laststatus=2
+let g:Powerline_symbols='unicode'
