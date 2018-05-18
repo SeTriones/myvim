@@ -32,6 +32,8 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'Yggdroot/LeaderF'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 call vundle#end()
 filetype plugin indent on
 
@@ -43,6 +45,16 @@ nnoremap <leader>g :YcmCompleter GoTo<CR>
 noremap <F2> :LeaderfFunction!<CR>
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_left = 1
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+let g:gutentags_ctags_tagfile = '.tags'
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+if !isdirectory(s:vim_tags)
+	silent! call mkdir(s:vim_tags, 'p')
+endif
 
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
