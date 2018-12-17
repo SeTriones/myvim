@@ -18,6 +18,7 @@ set tabstop=4
 set softtabstop=4
 set cindent shiftwidth=4
 set encoding=utf-8
+set expandtab
 au Filetype python setl et ts=4 sw=4
 
 set nocompatible
