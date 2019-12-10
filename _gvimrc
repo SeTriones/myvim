@@ -1,0 +1,24 @@
+set fencs=utf8,gbk,gb2312,gb18030
+set nobackup
+set ruler
+colo darkblue
+set backspace=indent,eol,start
+set guifont=Consolas:h12
+
+set incsearch
+set hlsearch
+set nocompatible
+
+filetype plugin indent on
+syntax on
+set number
+set smartindent
+set nocompatible
+set tabstop=4
+set softtabstop=4
+set expandtab
+set cindent shiftwidth=4
+au Filetype python setl et ts=4 sw=4
+set fdm=syntax
+set foldlevel=9999
+
